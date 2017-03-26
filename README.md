@@ -4,8 +4,9 @@ Import for csv and tsv files
 
 ## Lein
 
-[![Clojars Project](https://img.shields.io/clojars/v/mesh.svg)]
+Add the following dependency to your project.clj file:
 
+[![Clojars Project](https://clojars.org/mesh/latest-version.svg)]
 
 ## Require
 

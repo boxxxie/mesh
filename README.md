@@ -6,8 +6,10 @@ Import for csv and tsv files
 
 Add the following dependency to your project.clj file:
 
-[![Clojars Project](https://clojars.org/mesh/latest-version.svg)]
-(http://clojars.org/mesh)
+``` clj
+[mesh "0.0.1"]
+
+```
 
 ## Require
 

@@ -2,9 +2,29 @@
 
 Import for csv and tsv files 
 
+## Lein
+
+[![Clojars Project](https://img.shields.io/clojars/v/mesh.svg)]
+
+
+## Require
+
+``` clj
+(ns new-project
+  (:require [mesh.core] :as mesh))
+
+```
+
 ## Usage
 
-Source only available
+
+``` clj
+(def file-path "/myfile.csv")
+
+(mesh/import-file file-path)
+
+```
+
 
 ## License
 

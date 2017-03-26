@@ -1,4 +1,4 @@
-(defproject mesh "0.0.1"
+(defproject mesh "0.0.2-SNAPSHOT"
   :description "Import csv and tsv files"
   :url "https://github.com/rng-hack/mesh"
 

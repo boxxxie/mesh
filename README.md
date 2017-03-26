@@ -9,7 +9,7 @@ Automatically converts csv/tsv fields into standard Clojure data types.
 Add the following dependency to your project.clj file:
 
 ``` clj
-[mesh "0.0.1"]
+[mesh "0.0.2"]
 
 ```
 

@@ -137,3 +137,11 @@
       (is (= "integer-fmt" (fmt-name integer-fmt))))
   (testing "integer format"
       (is (= "real-fmt" (fmt-name real-fmt)))))
+
+
+(deftest test-import-file
+  (testing "load csv sample"
+     (let [path  (.getPath (clojure.java.io/resource "example1.csv"))
+           results (import-file path)]
+        (./pp results) 
+        (is (= true false)))))

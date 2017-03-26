@@ -76,13 +76,17 @@
   (instance? Boolean x))
 
 
+(defn is-fmt-boolean [string]
+  (or (= "true" string) (= "false" string)))
+
+
 (def boolean-fmt
   (reify Format
       (fmt-name [_] "boolean-fmt")
       (coerce [_ field] (Boolean/parseBoolean field))
       
-      (is-fmt [_ field] #spy/p (boolean? field))
-      (in-str [_ field]  (boolean? field))
+      (is-fmt [_ field]  (boolean? field))
+      (in-str [_ field]  (is-fmt-boolean field))
   
     (format-type [_ field] 1)
     (to-bytes [_ field writable] (if (= true field) [(byte 1)] [(byte 0)]))
@@ -299,7 +303,9 @@
    (let [lseq (rest (line-seq reader))]
       (doall  (map (fn [line-input]
            (let [the-regex (split-regx C)
-                 fields    (clojure.string/split line-input the-regex)]
+                 fields    (clojure.string/split line-input the-regex) ;;TODO handle invalid rows
+                 
+                 ] 
       
              
              (apply hash-map (mapcat (fn [field f-type f-name]

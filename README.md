@@ -1,6 +1,8 @@
 # mesh
 
-Import for csv and tsv files 
+Clojure library for importing csv and tsv files.
+
+Automatically converts csv/tsv fields into standard Clojure data types.
 
 ## Lein
 

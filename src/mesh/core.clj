@@ -81,7 +81,7 @@
       (fmt-name [_] "boolean-fmt")
       (coerce [_ field] (Boolean/parseBoolean field))
       
-      (is-fmt [_ field] (boolean? field))
+      (is-fmt [_ field] #spy/p (boolean? field))
       (in-str [_ field]  (boolean? field))
   
     (format-type [_ field] 1)
@@ -109,7 +109,7 @@
       (fmt-name [_] "integer-fmt")
       (coerce [_ field] 
         (try
-          (integer?  (Long/parseLong field))
+          (Long/parseLong field)
              (catch NumberFormatException e nil )))
      ;;   (if (= 0 (.length field))
       ;;         nil
@@ -331,13 +331,14 @@
       (let [C {}
           formats (concat (parse-standard-date-fmts standard-date-fmts) 
                           (parse-date-fmts date-fmts)
-                          [integer-fmt real-fmt string-fmt])
+                          [integer-fmt real-fmt boolean-fmt string-fmt])
 
           C (assoc C :formats formats)
           C (assoc C :file-type (file-type-detect path) )
 
           C (assoc C :field-names (field-name-detect C  reader))
           C (assoc C :field-types (field-types-detect-reader C reader1)) 
+          C (assoc C :type-description (map fmt-name (:field-types C))) 
 
 
 

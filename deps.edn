@@ -1,0 +1,9 @@
+{
+ :paths ["resources" "src"]
+
+ :deps {
+        org.clojure/clojure {:mvn/version "1.7.0"}
+        clj-time/clj-time   {:mvn/version "0.11.0"}
+        spyscope/spyscope   {:mvn/version "0.1.5"}
+        }
+ }

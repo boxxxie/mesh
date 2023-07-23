@@ -1,6 +1,6 @@
 (ns mesh.core
   (:require [clj-time.format :as f])
-  (:require [spyscope.core]))
+  )
 
 
 ;; Boolean hint
